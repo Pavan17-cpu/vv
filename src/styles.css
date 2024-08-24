@@ -1,0 +1,197 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #ffb6c1 50%, #ffff33 50%);
+  margin: 0;
+}
+
+.birthdayCard {
+  position: relative;
+  width: 400px; /* Adjusted width */
+  height: 600px; /* Adjusted height */
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: transform 1s, box-shadow 1s;
+  background-color: #fff; /* Ensure card background is white */
+  padding: 20px; /* Padding to ensure content doesn’t touch the border */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotateY(-5deg);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1),
+    0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-180deg);
+}
+
+.cardFront, .cardInside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Ensure padding and border are included in width and height */
+}
+
+.cardFront {
+  transform-origin: left;
+  transition: transform 0.6s;
+  padding: 20px; /* Padding to ensure content does not touch edges */
+  text-align: center;
+}
+
+.happy {
+  font-family: Tahoma, sans-serif;
+  font-size: 24px;
+  color: #ff6f61;
+  background-image: linear-gradient(120deg, #ffd856 0%, #f98c6e 100%);
+  padding: 20px;
+  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+}
+
+.cardInside {
+  z-index: -1;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically within the card */
+  align-items: center; /* Center horizontally within the card */
+  text-align: center; /* Default alignment for text */
+  position: relative; /* Allow absolute positioning inside */
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap to the next line */
+  justify-content: center; /* Center images horizontally */
+  gap: 10px; /* Add gap between images */
+}
+
+.insideImage {
+  width: 130px; /* Adjust size of images */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+p {
+  font-family: Arial, sans-serif; /* Change to a more common font */
+  font-weight: bold; /* Make text thick/bold */
+  font-style: italic; /* Make text italic */
+  color: #333;
+  margin: 10px 0;
+}
+
+.name {
+  font-family: Arial, sans-serif; /* Change to a more common font */
+  font-weight: bold; /* Make text thick/bold */
+  font-style: italic; /* Make text italic */
+  color: #333;
+  text-align: center;
+  margin-top: 20px; /* Add margin to ensure space above the name */
+}
+
+
+.back {
+  font-family: Tahoma, sans-serif;
+  color: #333;
+  text-align: center;
+  margin: 30px;
+  outline-color: #333;
+  outline-style: dotted;
+}
+
+.border {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* Ensure the background is white to avoid overlap */
+  box-sizing: border-box;
+}
+
+.border.top, .border.bottom {
+  left: 0;
+  right: 0;
+  height: 40px; /* Height of the border */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Spread icons evenly */
+}
+
+.border.top {
+  top: 0;
+}
+
+.border.bottom {
+  bottom: 0;
+}
+
+.border.left, .border.right {
+  top: 0;
+  bottom: 0;
+  width: 40px; /* Width of the border */
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Spread icons evenly */
+}
+
+.border.left {
+  left: 0;
+}
+
+.border.right {
+  right: 0;
+}
+
+.borderIcon {
+  font-size: 30px; /* Size of the border icons */
+  width: 40px; /* Ensure icons fit within border area */
+  height: 40px;
+  line-height: 40px; /* Align icons vertically */
+  text-align: center;
+}
+
+.pink {
+  color: #ff69b4; /* Light pink color for pink icons */
+}
+
+.yellow {
+  color: #ffd856; /* Yellow color for yellow icons */
+}
+
+.icon.cake {
+  font-size: 100px; /* Increase size of cake icon */
+  color: #ff6f61; /* Slightly darker color for the cake */
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.bold-italic {
+  font-family: Arial, sans-serif; 
+  font-weight: bold; 
+  font-style: italic; 
+  color: #333;
+}
